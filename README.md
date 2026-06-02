@@ -14,8 +14,8 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
   +-- 私网/本地地址
   |      -> 绕过代理
   |
-  +-- Bybit 相关域名
-  |      -> 🇯🇵 日本策略
+  +-- 加密相关域名
+  |      -> 🪙 加密策略
   |           默认: 🇯🇵 日本出口
   |           可选: 美国 / 新加坡 / DIRECT
   |
@@ -44,7 +44,7 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
 规则按顺序匹配，先命中先使用：
 
 ```text
-1. Bybit -> 🇯🇵 日本策略
+1. 加密相关服务 -> 🪙 加密策略
 2. OCBC / IBKR / 老虎证券 -> 🇸🇬 新加坡策略
 3. 国内服务 / CN / Apple / Microsoft -> 🏠 国内服务
 4. 国际代理规则 -> 🌍 国际服务
@@ -54,9 +54,9 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
 ## 策略组
 
 ```text
-🇯🇵 日本策略
+🪙 加密策略
   默认: 🇯🇵 日本出口
-  用途: Bybit 等需要日本出口的服务
+  用途: Bybit 等加密相关服务，默认走日本出口
 
 🇸🇬 新加坡策略
   默认: 自动选择可用的新加坡出口
@@ -94,7 +94,7 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
 ## 当前定向规则
 
 ```text
-日本策略:
+加密策略:
   Bybit 相关域名
 
 新加坡策略:
@@ -120,7 +120,7 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
 ```text
 1. 特定服务优先写本地规则，避免被远程规则误分流。
 2. 新加坡策略保持通用命名，不限定为金融服务。
-3. 日本策略用于需要明确走日本的服务。
+3. 加密策略用于加密相关服务，默认走日本出口。
 4. 默认出口保持美国，保证未命中流量优先可访问。
 5. 增加新服务时，优先加 DOMAIN-SUFFIX，少用 DOMAIN-KEYWORD。
 ```
