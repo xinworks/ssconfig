@@ -19,8 +19,9 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
   |           默认: 🇯🇵 日本出口
   |           可选: 美国 / 新加坡 / DIRECT
   |
-  +-- 新加坡指定域名
-  |      -> 🇸🇬 新加坡策略
+  +-- 金融相关域名
+  |      -> 🏦 金融策略
+  |           默认: 🇸🇬 新加坡节点
   |           当前包括: OCBC / IBKR / 老虎证券
   |
   +-- 国内服务规则
@@ -45,7 +46,7 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
 
 ```text
 1. 加密相关服务 -> 🪙 加密策略
-2. OCBC / IBKR / 老虎证券 -> 🇸🇬 新加坡策略
+2. OCBC / IBKR / 老虎证券 -> 🏦 金融策略
 3. 国内服务 / CN / Apple / Microsoft -> 🏠 国内服务
 4. 国际代理规则 -> 🌍 国际服务
 5. 其它所有 -> 🌐 默认出口
@@ -58,9 +59,10 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
   默认: 🇯🇵 日本出口
   用途: Bybit 等加密相关服务，默认走日本出口
 
-🇸🇬 新加坡策略
-  默认: 自动选择可用的新加坡出口
-  用途: 当前用于 OCBC、IBKR、老虎证券，后续也可放非金融的新加坡定向服务
+🏦 金融策略
+  默认: 🇸🇬 新加坡节点
+  用途: OCBC、IBKR、老虎证券等金融相关服务
+  可选: 美国 / 日本 / DIRECT
 
 🏠 国内服务
   默认: DIRECT
@@ -86,7 +88,7 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
   类型: fallback
   筛选: 日本 / JP / Japan 等关键词
 
-🇸🇬 新加坡策略
+🇸🇬 新加坡节点
   类型: fallback
   筛选: 新加坡 / 狮城 / SG / Singapore 等关键词
 ```
@@ -97,7 +99,7 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
 加密策略:
   Bybit 相关域名
 
-新加坡策略:
+金融策略:
   OCBC
   IBKR / Interactive Brokers
   老虎证券 / Tiger Brokers
@@ -119,7 +121,7 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
 
 ```text
 1. 特定服务优先写本地规则，避免被远程规则误分流。
-2. 新加坡策略保持通用命名，不限定为金融服务。
+2. 新加坡节点只表示出口节点池，不绑定具体业务场景。
 3. 加密策略用于加密相关服务，默认走日本出口。
 4. 默认出口保持美国，保证未命中流量优先可访问。
 5. 增加新服务时，优先加 DOMAIN-SUFFIX，少用 DOMAIN-KEYWORD。
