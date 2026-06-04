@@ -22,7 +22,7 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
   +-- 金融相关域名
   |      -> 🏦 金融策略
   |           默认: 🇸🇬 新加坡节点
-  |           当前包括: OCBC / IBKR / 老虎证券
+  |           当前包括: OCBC / IBKR / 老虎证券 / 富途 / 长桥
   |
   +-- 国内服务规则
   |      -> 🏠 国内服务
@@ -46,7 +46,7 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
 
 ```text
 1. 加密相关服务 -> 🪙 加密策略
-2. OCBC / IBKR / 老虎证券 -> 🏦 金融策略
+2. OCBC / IBKR / 老虎证券 / 富途 / 长桥 -> 🏦 金融策略
 3. 国内服务 / CN / Apple / Microsoft -> 🏠 国内服务
 4. 国际代理规则 -> 🌍 国际服务
 5. 其它所有 -> 🌐 默认出口
@@ -61,7 +61,7 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
 
 🏦 金融策略
   默认: 🇸🇬 新加坡节点
-  用途: OCBC、IBKR、老虎证券等金融相关服务
+  用途: OCBC、IBKR、老虎证券、富途、长桥等金融相关服务
   可选: 美国 / 日本 / DIRECT
 
 🏠 国内服务
@@ -103,6 +103,8 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
   OCBC
   IBKR / Interactive Brokers
   老虎证券 / Tiger Brokers
+  富途 / Futu / moomoo
+  长桥 / Longbridge / LongPort
 
 国内服务:
   Linear
