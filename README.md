@@ -104,7 +104,7 @@ https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
   IBKR / Interactive Brokers
   老虎证券 / Tiger Brokers
   富途 / Futu / moomoo
-  长桥 / Longbridge / LongPort
+  长桥 / Longbridge / LongPort / lbkrs
 
 国内服务:
   Linear
