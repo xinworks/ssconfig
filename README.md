@@ -3,7 +3,7 @@
 Shadowrocket 订阅配置：
 
 ```text
-https://raw.githubusercontent.com/XinXin622/ssconfig/main/sr.conf
+https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
 ```
 
 ## 策略总览
