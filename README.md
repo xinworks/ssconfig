@@ -17,27 +17,32 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
   +-- 加密相关域名
   |      -> 🪙 加密策略
   |           默认: 🇯🇵 日本出口
-  |           可选: 美国 / 新加坡 / DIRECT
+  |           可选: 美国 / 新加坡 / 香港 / DIRECT
   |
-  +-- 金融相关域名
+  +-- 新加坡金融相关域名
   |      -> 🏦 金融策略
   |           默认: 🇸🇬 新加坡节点
-  |           当前包括: OCBC / IBKR / 老虎证券 / 富途 / 长桥
+  |           当前包括: OCBC / IBKR
+  |
+  +-- 港股券商相关域名与富途关键 IP 段
+  |      -> 📈 港股策略
+  |           默认: 🇭🇰 香港节点
+  |           当前包括: 老虎证券 / 富途 / 长桥
   |
   +-- 国内服务规则
   |      -> 🏠 国内服务
   |           默认: DIRECT
-  |           可选: 新加坡 / 美国 / 日本
+  |           可选: 香港 / 新加坡 / 美国 / 日本
   |
   +-- 国际服务规则集
   |      -> 🌍 国际服务
   |           默认: 🇺🇸 美国节点
-  |           可选: 日本 / 新加坡 / DIRECT
+  |           可选: 日本 / 香港 / 新加坡 / DIRECT
   |
   +-- 其它所有未命中
          -> 🌐 默认出口
               默认: 🇺🇸 美国节点
-              可选: 日本 / 新加坡 / DIRECT
+              可选: 日本 / 香港 / 新加坡 / DIRECT
 ```
 
 ## 匹配顺序
@@ -46,10 +51,11 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
 
 ```text
 1. 加密相关服务 -> 🪙 加密策略
-2. OCBC / IBKR / 老虎证券 / 富途 / 长桥 -> 🏦 金融策略
-3. 国内服务 / CN / Apple / Microsoft -> 🏠 国内服务
-4. 国际代理规则 -> 🌍 国际服务
-5. 其它所有 -> 🌐 默认出口
+2. OCBC / IBKR -> 🏦 金融策略
+3. 老虎证券 / 富途 / 长桥 -> 📈 港股策略
+4. 国内服务 / CN / Apple / Microsoft -> 🏠 国内服务
+5. 国际代理规则 -> 🌍 国际服务
+6. 其它所有 -> 🌐 默认出口
 ```
 
 ## 策略组
@@ -61,8 +67,13 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
 
 🏦 金融策略
   默认: 🇸🇬 新加坡节点
-  用途: OCBC、IBKR、老虎证券、富途、长桥等金融相关服务
-  可选: 美国 / 日本 / DIRECT
+  用途: OCBC、IBKR 等新加坡金融相关服务
+  可选: 香港 / 美国 / 日本 / DIRECT
+
+📈 港股策略
+  默认: 🇭🇰 香港节点
+  用途: 老虎证券、富途、长桥等港股券商服务
+  可选: 新加坡 / 美国 / 日本 / DIRECT
 
 🏠 国内服务
   默认: DIRECT
@@ -91,6 +102,10 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
 🇸🇬 新加坡节点
   类型: fallback
   筛选: 新加坡 / 狮城 / SG / Singapore 等关键词
+
+🇭🇰 香港节点
+  类型: fallback
+  筛选: 香港 / HK / Hong Kong 等关键词
 ```
 
 ## 当前定向规则
@@ -102,9 +117,12 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
 金融策略:
   OCBC
   IBKR / Interactive Brokers
+
+港股策略:
   老虎证券 / Tiger Brokers
   富途 / Futu / moomoo
   长桥 / Longbridge / LongPort / lbkrs
+  富途关键 IP-CIDR 实验保留段
 
 国内服务:
   Linear
@@ -123,8 +141,9 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
 
 ```text
 1. 特定服务优先写本地规则，避免被远程规则误分流。
-2. 新加坡节点只表示出口节点池，不绑定具体业务场景。
+2. 新加坡节点只表示出口节点池，当前默认用于 OCBC / IBKR 等金融服务。
 3. 加密策略用于加密相关服务，默认走日本出口。
-4. 默认出口保持美国，保证未命中流量优先可访问。
-5. 增加新服务时，优先加 DOMAIN-SUFFIX，少用 DOMAIN-KEYWORD。
+4. 港股策略默认走香港，用于富途、老虎证券、长桥等港股券商。
+5. 默认出口保持美国，保证未命中流量优先可访问。
+6. 增加新服务时，优先加 DOMAIN-SUFFIX，少用 DOMAIN-KEYWORD。
 ```
