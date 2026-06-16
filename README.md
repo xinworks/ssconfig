@@ -122,7 +122,7 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
   老虎证券 / Tiger Brokers
   富途 / Futu / moomoo
   长桥 / Longbridge / LongPort / lbkrs
-  富途关键 IP-CIDR 实验保留段
+  富途 / Moomoo 社区全量 IP-CIDR 与单主机规则
 
 国内服务:
   Linear
@@ -144,6 +144,7 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
 2. 新加坡节点只表示出口节点池，当前默认用于 OCBC / IBKR 等金融服务。
 3. 加密策略用于加密相关服务，默认走日本出口。
 4. 港股策略默认走香港，用于富途、老虎证券、长桥等港股券商。
-5. 默认出口保持美国，保证未命中流量优先可访问。
-6. 增加新服务时，优先加 DOMAIN-SUFFIX，少用 DOMAIN-KEYWORD。
+5. 富途 / Moomoo 规则稳定性优先，已全量导入社区 CIDR，接受一定误杀风险。
+6. 默认出口保持美国，保证未命中流量优先可访问。
+7. 增加新服务时，优先加 DOMAIN-SUFFIX，少用 DOMAIN-KEYWORD。
 ```
