@@ -94,18 +94,22 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
 🇺🇸 美国节点
   类型: fallback
   筛选: 美国 / US / States / American 等关键词
+  倍率: 排除 5x 及以上节点
 
 🇯🇵 日本出口
   类型: fallback
   筛选: 日本 / JP / Japan 等关键词
+  倍率: 排除 5x 及以上节点
 
 🇸🇬 新加坡节点
   类型: fallback
   筛选: 新加坡 / 狮城 / SG / Singapore 等关键词
+  倍率: 排除 5x 及以上节点
 
 🇭🇰 香港节点
   类型: fallback
   筛选: 香港 / HK / Hong Kong 等关键词
+  倍率: 排除 5x 及以上节点
 ```
 
 ## 当前定向规则
@@ -145,6 +149,7 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
 3. 加密策略用于加密相关服务，默认走日本出口。
 4. 港股策略默认走香港，用于富途、老虎证券、长桥等港股券商。
 5. 富途 / Moomoo 规则稳定性优先，已全量导入社区 CIDR，接受一定误杀风险。
-6. 默认出口保持美国，保证未命中流量优先可访问。
-7. 增加新服务时，优先加 DOMAIN-SUFFIX，少用 DOMAIN-KEYWORD。
+6. 所有地区节点池默认排除 5x 及以上高倍率节点。
+7. 默认出口保持美国，保证未命中流量优先可访问。
+8. 增加新服务时，优先加 DOMAIN-SUFFIX，少用 DOMAIN-KEYWORD。
 ```
