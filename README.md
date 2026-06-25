@@ -52,7 +52,7 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
 ```text
 1. 加密相关服务 -> 🪙 加密策略
 2. OCBC / IBKR -> 🏦 金融策略
-3. 老虎证券 / 富途 / 长桥 -> 📈 港股策略
+3. TradingView / 老虎证券 / 富途 / 长桥 -> 📈 港股策略
 4. 国内服务 / CN / Apple / Microsoft -> 🏠 国内服务
 5. 国际代理规则 -> 🌍 国际服务
 6. 其它所有 -> 🌐 默认出口
@@ -72,7 +72,7 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
 
 📈 港股策略
   默认: 🇭🇰 香港节点
-  用途: 老虎证券、富途、长桥等港股券商服务
+  用途: TradingView、老虎证券、富途、长桥等港股相关服务
   可选: 新加坡 / 美国 / 日本 / DIRECT
 
 🏠 国内服务
@@ -127,6 +127,7 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
   IBKR / Interactive Brokers
 
 港股策略:
+  TradingView
   老虎证券 / Tiger Brokers
   富途 / Futu / moomoo
   长桥 / Longbridge / LongPort / lbkrs
@@ -151,7 +152,7 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
 1. 特定服务优先写本地规则，避免被远程规则误分流。
 2. 新加坡节点只表示出口节点池，当前默认用于 OCBC / IBKR 等金融服务。
 3. 加密策略用于加密相关服务，默认走日本出口。
-4. 港股策略默认走香港，用于富途、老虎证券、长桥等港股券商。
+4. 港股策略默认走香港，用于 TradingView、富途、老虎证券、长桥等港股相关服务。
 5. 富途 / Moomoo 规则稳定性优先，已全量导入社区 CIDR，接受一定误杀风险。
 6. 所有地区节点池默认排除 5x 及以上高倍率节点。
 7. 香港节点池使用 url-test 优先低延迟；美国、日本、新加坡维持 fallback。
