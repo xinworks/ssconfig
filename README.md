@@ -63,7 +63,7 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
 ```text
 🪙 加密策略
   默认: 🇯🇵 日本出口
-  用途: Bybit 等加密相关服务，默认走日本出口
+  用途: Binance、Bybit 等加密相关服务，默认走日本出口
 
 🏦 金融策略
   默认: 🇸🇬 新加坡节点
@@ -120,6 +120,7 @@ https://raw.githubusercontent.com/xinworks/ssconfig/main/sr.conf
 
 ```text
 加密策略:
+  Binance 相关域名
   Bybit 相关域名
 
 金融策略:
